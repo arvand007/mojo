@@ -1,0 +1,94 @@
+/* ==========================================================================
+    Max-Width: 980px
+  ========================================================================== */
+@media only screen and (max-width: 980px) {
+  .var-bar .col-1-4 {
+    width: 50%; }
+  .content-wrapper .top-bar .ext,
+  .content-wrapper .top-bar .session {
+    font-size: 14px; }
+  .content-wrapper .ciq .ciq-num {
+    font-size: 22px; }
+  .content-wrapper .status-col {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px; }
+  .content-wrapper .status {
+    float: left;
+    width: 50%; }
+  .content-wrapper .status-col {
+    width: 100% !important; }
+  .content-wrapper .select-status {
+    float: left;
+    text-align: right;
+    width: 50%; }
+  .top-bar .col-1-4 {
+    width: 50%; }
+  .content-wrapper .ciq {
+    text-align: right; }
+  .main-header nav.navbar .navbar-custom-menu span.user-toggle {
+    padding-right: 0; } }
+
+/* ==========================================================================
+    Max-Width: 768px
+  ========================================================================== */
+@media only screen and (max-width: 768px) {
+  .main-header a.logo,
+  .main-header .main-sidebar {
+    width: 56px; }
+  .main-header .slogan,
+  .main-header .main-sidebar ul li a span {
+    opacity: 0;
+    display: none; }
+  .main-header nav.navbar {
+    margin-left: 56px !important; }
+  .main-sidebar {
+    overflow: visible;
+    width: 56px; }
+    .main-sidebar .menu-sidebar ul li a span {
+      display: none; }
+    .main-sidebar ul li a:hover span {
+      position: absolute;
+      z-index: 10000;
+      background: #192226;
+      width: 160px;
+      padding: 12px;
+      top: 0;
+      left: 48px;
+      display: block;
+      -webkit-border-radius: 0px 3px 3px 0;
+      border-radius: 0px 3px 3px 0; }
+  .content-wrapper {
+    margin-left: 56px; }
+  .content-wrapper .top-bar .ext,
+  .content-wrapper .top-bar .session {
+    font-size: 14px; } }
+
+/* ==========================================================================
+    Max-Width: 480px
+  ========================================================================== */
+@media only screen and (max-width: 480px) {
+  .var-bar .col-1-4 {
+    width: 100%; }
+  .main-header nav.navbar .navbar-custom-menu span.details {
+    display: none; }
+  .main-header nav.navbar .navbar-custom-menu span.user-toggle {
+    padding: 0; }
+  .top-bar .col-1-4,
+  .content-wrapper .status {
+    width: 100%; }
+  .content-wrapper .ciq {
+    text-align: left; }
+  .content-wrapper .ciq .ciq-num,
+  .content-wrapper .ciq .ciq-title {
+    display: inline-block; }
+  .content-wrapper .ciq .ciq-num {
+    font-size: 16px; }
+  .content-wrapper .select-status {
+    text-align: left;
+    width: 100%;
+    margin-top: 10px; }
+  .content-wrapper .select-status .form-control {
+    height: 30px;
+    font-size: 14px;
+    min-width: 50%; } }
