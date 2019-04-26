@@ -228,6 +228,7 @@ body {
     background: #FFF;
     color: #333;
     text-rendering: optimizelegibility;
+    height: 100%;
 }
 
 .body-wrapper {
