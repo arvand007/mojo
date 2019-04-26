@@ -23,6 +23,7 @@ html {
     font-size: 16px;
     line-height: 1.8;
     cursor: default;
+    height: 100%;
 }
 
 ::-moz-selection,
