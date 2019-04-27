@@ -27,7 +27,8 @@
   .content-wrapper .ciq {
     text-align: right; }
   .main-header nav.navbar .navbar-custom-menu span.user-toggle {
-    padding-right: 0; } }
+    padding-right: 0; }
+   }
 
 /* ==========================================================================
     Max-Width: 768px
@@ -62,7 +63,11 @@
     margin-left: 56px; }
   .content-wrapper .top-bar .ext,
   .content-wrapper .top-bar .session {
-    font-size: 14px; } }
+    font-size: 14px; }
+    .form-group input.input {
+      width: 100%; }
+    .wrapper {
+      width: 100%; }  }
 
 /* ==========================================================================
     Max-Width: 480px
@@ -91,4 +96,10 @@
   .content-wrapper .select-status .form-control {
     height: 30px;
     font-size: 14px;
-    min-width: 50%; } }
+    min-width: 50%; } 
+    .col-1-6.figure {
+      display: none;
+      visibility: hidden;
+      width: 0; }
+    .col-1-6.form {
+      width: 100%; }}
