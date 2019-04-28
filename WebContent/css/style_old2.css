@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Outbound Dialer v1.0
    Creator: Mohsen Hosseinian {imohsen.net} @imohsenet
@@ -234,7 +233,7 @@ body {
 }
 
 .body-wrapper {
-    min-height: 100%;
+    height: 100%;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
@@ -736,8 +735,7 @@ button.btn.btn-primary:hover {
     padding-right: 50px;
 }
 
-.form-group input.input,
-input.date-picker {
+.form-group input.input {
     background: #FFFFFF;
     border: 1px solid #DFE1E6;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
@@ -763,23 +761,4 @@ input.date-picker {
     top: 5px;
     border-left: 1px solid #eaebec;
     bottom: 5px;
-}
-
-.container {
-    padding: 10px 20px;
-    width: 100%;
-    display: block;
-}
-
-input.date-picker {
-    padding: 6px 10px;
-    width: auto;
-}
-
-.total-record {
-    padding: 8px 10px;
-    font-weight: 600;
-}
-.select-status .form-group {
-    margin-bottom: 0;
 }
