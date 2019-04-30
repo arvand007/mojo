@@ -664,22 +664,14 @@ body {
 }
 
 .flexcenter {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
     height: 100vh;
     background: #FFF url("../images/login-bg.jpg") no-repeat center center/cover;
 }
-
+.login-form{
+    display: block;
+    margin: 80px auto 0 auto;
+    max-width: 320px;
+}
 .login-form .logo {
     display: block;
     width: 100%;
@@ -702,6 +694,7 @@ body {
 .form-group {
     margin-bottom: 1.8rem;
     position: relative;
+    width: 320px;
 }
 
 button.btn {
@@ -782,4 +775,11 @@ input.date-picker {
 }
 .select-status .form-group {
     margin-bottom: 0;
+}
+.cp {
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
 }
