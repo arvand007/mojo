@@ -538,9 +538,9 @@ body {
     font-weight: 300;
 }
 
-.content-wrapper .select-status {
-    width: 100%;
-}
+/* .content-wrapper .select-status {
+    /* width: 100%;
+} */
 
 .content-wrapper .select-status .form-control {
     width: 140px;
