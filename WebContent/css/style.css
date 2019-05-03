@@ -26,7 +26,12 @@ html {
     cursor: default;
     height: 100%;
 }
-
+html#login {
+    overflow-y: hidden;
+}
+html#login body{
+    overflow-y: hidden;
+}
 ::-moz-selection,
 ::-moz-selection {
     background: #367fa9;
@@ -660,7 +665,6 @@ body {
 
 .col-1-6.form {
     background: #FFF;
-    height: 100vh;
 }
 
 .flexcenter {
@@ -777,9 +781,9 @@ input.date-picker {
     margin-bottom: 0;
 }
 .cp {
-    position: absolute;
-    bottom: 30px;
+    position: relative;
     text-align: center;
-    margin: 0 auto;
+    margin: 3rem auto 1rem auto;
     width: 50%;
+    color: #999;
 }
