@@ -1,6 +1,7 @@
 package UI;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.util.Vector;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -46,23 +48,38 @@ public class CallsinQReport extends HttpServlet {
 		DBConnection DBConnection=new DBConnection();
 		String Queue=request.getParameter("Queue");			
 		String Date=request.getParameter("Date");
-		logger.info("Queue: "+Queue +" Date: "+Date);
-		try {
-			Vector<ReportObject> Reports=DBConnection.CallsinQTable(Queue, Date);
-			logger.info("There are "+Reports.size()+" in the table "+Queue);
-
-			for (int i=0; i<Reports.size(); i++) {
-				response.getWriter().println(Reports.get(i).getID()+"|"+Reports.get(i).getPhoneNumber()+"|"+Reports.get(i).getName()+"|"+Reports.get(i).getReportNumber()+"|"+Reports.get(i).getDateAdded()
-						+"|"+Reports.get(i).getAgentID()+"|"+Reports.get(i).getDateTime()+"|"+Reports.get(i).getStatus());
+		String EncryptionKey=request.getParameter("Encryptionkey");
+		HttpSession session = request.getSession(true);	   
+		String SessionEncryptionKey=(String) session.getAttribute("encryptionKey");				
+		logger.info("Queue: "+Queue +" Date: "+Date+" EncryptionKey: "+EncryptionKey+" SessionEncryptionKey: "+SessionEncryptionKey );
+		if(EncryptionKey!=null&&SessionEncryptionKey!=null&&EncryptionKey.equals(SessionEncryptionKey)) {
+			try {
+				Vector<ReportObject> Reports=DBConnection.CallsinQTable(Queue, Date);
+				logger.info("There are "+Reports.size()+" in the table "+Queue);
+	
+				for (int i=0; i<Reports.size(); i++) {
+					response.getWriter().println(Reports.get(i).getID()+"|"+Reports.get(i).getPhoneNumber()+"|"+Reports.get(i).getName()+"|"+Reports.get(i).getReportNumber()+"|"+Reports.get(i).getDateAdded()
+							+"|"+Reports.get(i).getAgentID()+"|"+Reports.get(i).getDateTime()+"|"+Reports.get(i).getStatus());
+				}
+	
+	
+				DBConnection.CloseConnection();
+			}catch(Exception e){
+				e.printStackTrace();
+	
+				response.getWriter().println("Error: Could not obtain the list for: "+Queue);
 			}
-
-
-			DBConnection.CloseConnection();
-		}catch(Exception e){
-			e.printStackTrace();
-
-			response.getWriter().println("Error: Could not obtain the list for: "+Queue);
+		}else {
+			response.getWriter().println("Encryption Error: Could not obtain the list for: "+Queue);
 		}
 	}
+	
+	/**
+     * Convert a result set into a XML List
+     * @param resultSet
+     * @return a XML String with list elements
+     * @throws Exception if something happens
+     */
+   
 
 }

@@ -1,6 +1,5 @@
-
 /* ==========================================================================
-   Outbound Dialer v1.03
+   Outbound Dialer v1.0
    Creator: Mohsen Hosseinian {imohsen.net} @imohsenet
   ========================================================================== */
 /* ==========================================================================
@@ -24,14 +23,8 @@ html {
     font-size: 16px;
     line-height: 1.8;
     cursor: default;
-    height: 100%;
 }
-html#login {
-    overflow-y: hidden;
-}
-html#login body{
-    overflow-y: hidden;
-}
+
 ::-moz-selection,
 ::-moz-selection {
     background: #367fa9;
@@ -235,11 +228,10 @@ body {
     background: #FFF;
     color: #333;
     text-rendering: optimizelegibility;
-    height: 100%;
 }
 
 .body-wrapper {
-    min-height: 100%;
+    height: 100%;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
@@ -333,13 +325,6 @@ body {
 
 .main-header nav.navbar .logout:hover {
     background: #3c8dbc;
-    border-left: 1px solid #3c8dbc;
-    border-right: 0px solid #367fa9;
-    border-top: 0px solid #367fa9;
-}
-
-.main-header nav.navbar .logout:disabled {
-    background: #cccccc;
     border-left: 1px solid #3c8dbc;
     border-right: 0px solid #367fa9;
     border-top: 0px solid #367fa9;
@@ -476,7 +461,7 @@ body {
     background: #FFF;
     -webkit-box-shadow: 0 5px 15px #f1f1f1;
     box-shadow: 0 5px 15px #f1f1f1;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .content-wrapper .top-bar .ext,
@@ -538,9 +523,9 @@ body {
     font-weight: 300;
 }
 
-/* .content-wrapper .select-status {
-    /* width: 100%;
-} */
+.content-wrapper .select-status {
+    width: 100%;
+}
 
 .content-wrapper .select-status .form-control {
     width: 140px;
@@ -566,7 +551,6 @@ body {
     width: 100%;
     display: block;
 }
-
 
 .var-bar .col-1-12.marquee .inner {
     display: block;
@@ -661,139 +645,4 @@ body {
 
 .iframe-box iframe {
     width: 100%;
-    height: 400px;
-}
-
-.col-1-6.form {
-    background: #FFF;
-}
-
-.flexcenter {
-    height: 100vh;
-    background: #FFF url("../images/login-bg.jpg") no-repeat center center/cover;
-}
-.login-form{
-    display: block;
-    margin: 80px auto 0 auto;
-    max-width: 320px;
-}
-.login-form .logo {
-    display: block;
-    width: 100%;
-    margin: auto auto 6rem auto;
-    text-align: center;
-}
-
-.login-form .sign-link {
-    margin-top: 6rem;
-    text-align: center;
-}
-
-.form .form-title {
-    font-size: 18px;
-    color: #3B3C54;
-    margin-bottom: 1rem;
-    font-weight: 400;
-}
-
-.form-group {
-    margin-bottom: 0.5rem;
-    position: relative;
-    width: 320px;
-}
-
-.messageDiv{   
-    width: 100%;
-    margin-bottom: 0.5rem;
-    display: block;
-    color: red;
-    min-height: 20px;
-    font-size: 12px;
-}
-
-button.btn {
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    color: #FFF;
-    cursor: pointer;
-    padding: 9px 10px;
-    border: 0;
-    font-size: 14px;
-    font-weight: 400;
-    min-width: 140px;
-    -webkit-transition: all .15s ease-in-out;
-    -o-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
-    position: relative;
-    -webkit-background-size: 200% auto;
-    background-size: 200% auto;
-}
-
-button.btn.btn-primary {
-    background: #3c8dbc;
-}
-
-button.btn.btn-primary:hover {
-    background: #367fa9;
-}
-
-.form-group input.input.icon {
-    padding-right: 50px;
-}
-
-.form-group input.input,
-input.date-picker {
-    background: #FFFFFF;
-    border: 1px solid #DFE1E6;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    padding: 12px 10px;
-    font-size: 14px;
-    width: 320px;
-    color: #3B3C54;
-    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-    -o-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-}
-
-.form-group .input-icon {
-    position: absolute;
-    right: 0px;
-    width: 40px;
-    padding: 3px 0 8px 6px;
-    top: 5px;
-    border-left: 1px solid #eaebec;
-    bottom: 5px;
-}
-
-.container {
-    padding: 10px 20px;
-    width: 100%;
-    display: block;
-}
-
-input.date-picker {
-    padding: 6px 10px;
-    width: auto;
-}
-
-.total-record {
-    padding: 8px 10px;
-    font-weight: 600;
-}
-.select-status .form-group {
-    margin-bottom: 0;
-}
-.cp {
-    position: relative;
-    text-align: center;
-    margin: 3rem auto 1rem auto;
-    width: 50%;
-    color: #999;
 }

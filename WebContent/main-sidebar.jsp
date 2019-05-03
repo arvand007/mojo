@@ -17,8 +17,8 @@
         <div class="menu-sidebar">
             <ul>
                 <li class="<% out.print(TADClass); %>"><a href="#"><i class="fas fa-phone-square"></i><span>Agent Desktop</span></a></li>
-                <li><a href="#" class="<% out.print(CallsinQClass); %>"><i class="fas fa-users"></i></i><span>Calls in Q</span></a></li>
-                <li><a href="#" class="<% out.print(AdminClass); %>"><i class="fas fa-cog"></i><span>Admin</span></a></li>                
+                <li><a href="CallsinQ.jsp" class="<% out.print(CallsinQClass); %>"><i class="fas fa-users"></i></i><span>Calls in Q</span></a></li>
+                <li><a href="Admin.jsp" class="<% out.print(AdminClass); %>"><i class="fas fa-cog"></i><span>Admin</span></a></li>                
             </ul>
         </div>
  </aside>

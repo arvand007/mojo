@@ -41,14 +41,27 @@ public class CallsinQ extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			DBConnection DBConnection=new DBConnection();
+					
 			String Queue=request.getParameter("Queue");	
 			String Date=request.getParameter("Date");
-			logger.info("Queue: "+Queue +" Date: "+Date);
-			int QueueStat[]=DBConnection.CallsinQ(Queue, Date);
-			logger.info(QueueStat[0]+","+QueueStat[1]+","+QueueStat[2]);
-			response.getWriter().println(QueueStat[0]+","+QueueStat[1]+","+QueueStat[2]);
-			DBConnection.CloseConnection();
+			String EncryptionKey=request.getParameter("Encryptionkey");
+			HttpSession session = request.getSession(true);	   
+			String SessionEncryptionKey=(String) session.getAttribute("encryptionKey");				
+			logger.info("Queue: "+Queue +" Date: "+Date+" EncryptionKey: "+EncryptionKey+" SessionEncryptionKey: "+SessionEncryptionKey );
+			if(EncryptionKey!=null&&SessionEncryptionKey!=null&&EncryptionKey.equals(SessionEncryptionKey)) {
+				DBConnection DBConnection=new DBConnection();	
+				int QueueStat[]=DBConnection.CallsinQ(Queue, Date);
+				logger.info(QueueStat[0]+","+QueueStat[1]+","+QueueStat[2]);
+				response.getWriter().println(QueueStat[0]+","+QueueStat[1]+","+QueueStat[2]);
+				DBConnection.CloseConnection();
+			}else {
+				logger.info("Encryptionkeh error");
+				int QueueStat[]=new int[3];
+				QueueStat[0]=-1;
+				QueueStat[1]=-1;
+				QueueStat[2]=-1;
+				response.getWriter().println(QueueStat[0]+","+QueueStat[1]+","+QueueStat[2]);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			int QueueStat[]=new int[3];
