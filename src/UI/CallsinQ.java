@@ -55,7 +55,7 @@ public class CallsinQ extends HttpServlet {
 				response.getWriter().println(QueueStat[0]+","+QueueStat[1]+","+QueueStat[2]);
 				DBConnection.CloseConnection();
 			}else {
-				logger.info("Encryptionkeh error");
+				logger.info("Encryptionkey error");
 				int QueueStat[]=new int[3];
 				QueueStat[0]=-1;
 				QueueStat[1]=-1;

@@ -64,13 +64,15 @@ public class DBConnection {
 		int RecordsRemaining=0;
 		if("DialingList".equals(Queue)) {
 			try {
-				String Query="SELECT count(\"ID\") as Counter FROM public.\"DialingList\" WHERE \"DateAdded\" >='"+localDateTime+"'";
+				//String Query="SELECT count(\"ID\") as Counter FROM public.\"DialingList\" WHERE \"DateAdded\" >='"+localDateTime+"'";
+				String Query="SELECT count(\"ID\") as Counter FROM public.\"DialingList\"";
 				logger.info(Query); 
 				ResultSet RS=JdbcConnection.ExecuteQuery(Query); 	
 				RS.next();
 				TotalRecords= RS.getInt("Counter");
 				
-				Query="SELECT count(\"ID\") as Counter FROM public.\"DialingList\" WHERE \"DateAdded\" >='"+localDateTime+"' and \"Status\" is not null";
+				//Query="SELECT count(\"ID\") as Counter FROM public.\"DialingList\" WHERE \"DateAdded\" >='"+localDateTime+"' and \"Status\" is not null";
+				Query="SELECT count(\"ID\") as Counter FROM public.\"DialingList\" WHERE \"Status\" is not null";
 				logger.info(Query); 
 				RS=JdbcConnection.ExecuteQuery(Query); 	
 				RS.next();

@@ -14,7 +14,7 @@ String AgentName=(String)session.getAttribute("AgentName");
 
 <head>
     <meta charset="utf-8">
-    <title>Expintel Dialer - Agent Desktop</title>
+    <title>Expintel Dialer - Mojo Desktop</title>
     <meta name="description" content="Outbound Dialer">
     <meta name="keywords" content="Outbound Dialer">
     <meta http-equiv="x-ua-compatible" content="ie=edge">

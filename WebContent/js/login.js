@@ -14,7 +14,7 @@
 				// ajax call
 				$.ajax({
 					type : "POST",
-					url : "/OutboundDialerDesktop/DoLogin",
+					url : "/MojoDesktop/DoLogin",
 					data : data,
 					beforeSend : function(html) { // this happen before actual call
 						$("#messageDiv").html('Please Wait...');					

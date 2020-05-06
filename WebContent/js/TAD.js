@@ -13,7 +13,7 @@
 		sendMessage("State:"+str);
 		document.getElementById("State").innerHTML = str;
 		if(str=="Break" || str=="Ready" || str=="Lunch" || str=="Meeting" ){
-			document.getElementById("screenpop").src = 'http://localhost:7020/GetCrashReports/?RP=';	
+			document.getElementById("screenpop").src = 'http://localhost:7000/GetCrashReports/?RP=';	
 			document.getElementById("CustomerName").innerHTML = "Empty";	
 			document.getElementById("CustomerPhone").innerHTML = "Empty";
 		}	
@@ -37,7 +37,7 @@
         if ("WebSocket" in window) { 
 			console.log('WebSocket is supported by your browser.');
 		 
-			connection = new WebSocket('ws://192.168.0.23:9091');
+			connection = new WebSocket('ws://99.229.116.224:9091');
 			document.getElementById("State").innerHTML="Connecting";	
 			connection.onopen = function () {
 				console.log('Connected!');
@@ -69,7 +69,7 @@
 					State=e.data.substring(6);
 					document.getElementById("State").innerHTML = State;
 					if(State=="Break" || State=="Ready" || State=="Lunch" || State=="Meeting" ){
-						document.getElementById("screenpop").src = 'http://localhost:7020/GetCrashReports/?RP=';
+						document.getElementById("screenpop").src = 'http://localhost:7000/GetCrashReports/?RP=';
 						document.getElementById("CustomerName").innerHTML = "Empty";	
 						document.getElementById("CustomerPhone").innerHTML = "Empty";						
 					}	
@@ -104,7 +104,7 @@
 				
 				}else if((e.data).includes("NewCallReportNumber:")){
 					CallID=e.data.substring(20);
-					document.getElementById("screenpop").src = 'http://localhost:7020/GetCrashReports/?RP='+CallID;	
+					document.getElementById("screenpop").src = 'http://localhost:7000/GetCrashReports/?RP='+CallID;	
 				
 				}else if((e.data).includes("NewCallcompleted:")){
 					CallID=e.data.substring(19);
@@ -243,7 +243,7 @@ function SetAgentID() {
 		var data = 'Queue=DialingList&Date='+yyyy + '-' + mm + '-' + dd+'&Encryptionkey='+Encryptionkey;
 		$.ajax({
 			type : "POST",
-			url : "/OutboundDialerDesktop/CallsinQ",
+			url : "/MojoDesktop/CallsinQ",
 			data : data,
 			beforeSend : function(html) { // this happen before actual call
 							
