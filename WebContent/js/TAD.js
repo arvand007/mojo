@@ -243,7 +243,7 @@ function SetAgentID() {
 		var data = 'Queue=DialingList&Date='+yyyy + '-' + mm + '-' + dd+'&Encryptionkey='+Encryptionkey;
 		$.ajax({
 			type : "POST",
-			url : "/MojoDesktop/CallsinQ",
+			url : "./CallsinQ",
 			data : data,
 			beforeSend : function(html) { // this happen before actual call
 							

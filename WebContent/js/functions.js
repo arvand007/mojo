@@ -11,7 +11,7 @@
 			var data = 'Queue=DialingList&Date='+Date+'&Encryptionkey='+Encryptionkey;
 			$.ajax({
 				type : "POST",
-				url : "/OutboundDialerDesktop/CallsinQReport",
+				url : "./CallsinQReport",
 				data : data,
 				beforeSend : function(html) { // this happen before actual call
 					$("#QueueReportStatus").show();
@@ -35,7 +35,7 @@
 			var data = 'Queue=DialingList&Date='+Date+'&Encryptionkey='+Encryptionkey;
 			$.ajax({
 				type : "POST",
-				url : "/OutboundDialerDesktop/CallsinQReport",
+				url : "./CallsinQReport",
 				data : data,
 				beforeSend : function(html) { // this happen before actual call
 					$("#QueueReportStatus").show();
@@ -58,7 +58,7 @@
 		var data = 'Queue=DialingList&Date='+Date+'&Encryptionkey='+Encryptionkey;
 		$.ajax({
 			type : "POST",
-			url : "/OutboundDialerDesktop/CallsinQ",
+			url : "./CallsinQ",
 			data : data,
 			beforeSend : function(html) { // this happen before actual call
 							
@@ -91,7 +91,7 @@
 				// ajax call
 				$.ajax({
 					type : "POST",
-					url : "/OutboundDialerDesktop/DoLogin",
+					url : "./DoLogin",
 					data : data,
 					beforeSend : function(html) { // this happen before actual call
 						$("#messageDiv").html('Please Wait...');					
