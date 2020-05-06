@@ -179,7 +179,7 @@ function SetAgentID() {
 			var data = 'SessionID=' + SessionID;
 			$.ajax({
 				type : "POST",
-				url : "/OutboundDialerDesktop/DoLogout",
+				url : "./DoLogout",
 				data : data,
 				beforeSend : function(html) { // this happen before actual call
 								
