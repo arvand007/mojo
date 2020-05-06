@@ -30,8 +30,8 @@ public class JdbcConnection {
 		try {
 			  Class.forName("org.postgresql.Driver");
 			  //local connection
-			  conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","Trivia", "Trivia");
-			  
+			  //conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","Trivia", "Trivia");
+			  conn = DriverManager.getConnection("jdbc:postgresql://ec2-50-17-90-177.compute-1.amazonaws.com:5432/d6pocr4ntklu23?sslmode=require","zfbntjkxlrzmke", "be019ad744099bb8a1eacd8d34485ce3fddb69a5d0fec99b6d15806ada753dc0");
 			  //Heroku Postgress
 			  //postgres://upiwrvfjoehllq:ca88f716d75ea49d2baddbfb1f89633cf17bf555bcc0aae3741815cd0ca2fd56@ec2-107-22-162-82.compute-1.amazonaws.com:5432/d35rq8dbg19utn
 			  //conn = DriverManager.getConnection("jdbc:postgresql://ec2-107-22-162-82.compute-1.amazonaws.com:5432/d35rq8dbg19utn?sslmode=require","upiwrvfjoehllq", "ca88f716d75ea49d2baddbfb1f89633cf17bf555bcc0aae3741815cd0ca2fd56");
