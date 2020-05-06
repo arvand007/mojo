@@ -13,7 +13,7 @@
 		sendMessage("State:"+str);
 		document.getElementById("State").innerHTML = str;
 		if(str=="Break" || str=="Ready" || str=="Lunch" || str=="Meeting" ){
-			document.getElementById("screenpop").src = 'http://localhost:7000/GetCrashReports/?RP=';	
+			document.getElementById("screenpop").src = '';	
 			document.getElementById("CustomerName").innerHTML = "Empty";	
 			document.getElementById("CustomerPhone").innerHTML = "Empty";
 		}	
@@ -69,7 +69,7 @@
 					State=e.data.substring(6);
 					document.getElementById("State").innerHTML = State;
 					if(State=="Break" || State=="Ready" || State=="Lunch" || State=="Meeting" ){
-						document.getElementById("screenpop").src = 'http://localhost:7000/GetCrashReports/?RP=';
+						document.getElementById("screenpop").src = '';
 						document.getElementById("CustomerName").innerHTML = "Empty";	
 						document.getElementById("CustomerPhone").innerHTML = "Empty";						
 					}	
@@ -103,8 +103,8 @@
 					document.getElementById("CallNotification").innerHTML = 'Talking to '+CallID;	
 				
 				}else if((e.data).includes("NewCallReportNumber:")){
-					CallID=e.data.substring(20);
-					document.getElementById("screenpop").src = 'http://localhost:7000/GetCrashReports/?RP='+CallID;	
+					CallID=e.data.substring(20);					
+					document.getElementById("screenpop").src = 'https://app.hubspot.com/contacts/7658484/contact/'+CallID;	
 				
 				}else if((e.data).includes("NewCallcompleted:")){
 					CallID=e.data.substring(19);
